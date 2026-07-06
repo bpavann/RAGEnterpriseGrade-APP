@@ -1,7 +1,8 @@
 # RAG Enterprise-Grade Application
 
-## Overview
+```
 This project is a **production-grade, scalable, and advanced Retrieval-Augmented Generation (RAG) application** designed to handle high-noise enterprise data. Moving beyond simple prototypes, this system utilizes an **Agentic AI** architecture to intelligently route queries, ensure robust security, and provide deep observability into the AI's execution.
+```
 
 ## Core Features
 
