@@ -11,8 +11,6 @@ __pycache__/
 processed_data
 processed_data/
 processed_data/*
-/DATA
-DATA/
 
 # Distribution / packaging
 .Python
