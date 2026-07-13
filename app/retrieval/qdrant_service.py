@@ -11,24 +11,24 @@ qdrant_client = QdrantClient(
 # Search Function
 def search_enterprise_knowledge(query: str,limit: int = 15) -> list[dict]:
     """
-    Search enterprise knowledge from the
-    correct Qdrant collection.
+    Performs a high-precision search in the enterprise knowledge base.
+    Uses the modern query_points interface.
     """
     if not query:
         return []
     try:
         # Generate query embedding
-        vector = embed_query(query)
+        query_vector = embed_query(query)
         # Select matching collection
         collection_name = settings.QDRANT_COLLECTION
         logfire.info("Qdrant search",collection=collection_name,embedding_model="all-mpnet-base-v2",limit=limit)
-        hits = qdrant_client.query_points(collection_name=collection_name,query=vector,limit=limit,with_payload=True,).points
+        response = qdrant_client.query_points(collection_name=collection_name,query=query_vector,limit=limit,with_payload=True).points
     except Exception as exc:
         logfire.error(f"Qdrant search failed: {exc}")
         raise
 
     results = []
-    for hit in hits:
+    for hit in response:
         payload = hit.payload or {}
         results.append(
             {

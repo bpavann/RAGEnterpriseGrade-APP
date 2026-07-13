@@ -11,7 +11,12 @@ __pycache__/
 processed_data
 processed_data/
 processed_data/*
-
+DOCS
+DOCS/
+DOCS/*
+temp
+temp/
+temp/*
 # Distribution / packaging
 .Python
 build/

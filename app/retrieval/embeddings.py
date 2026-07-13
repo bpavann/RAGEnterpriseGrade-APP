@@ -79,7 +79,7 @@ def _embed_batch(batch: list[str]) -> list[list[float]]:
     _init()
     return _active_model.encode(batch,show_progress_bar=False).tolist()  
 
-# ── Public API (same signatures as before) ─────────────────────────────────────
+# Embedding functions for queries and texts
 def embed_query(query: str) -> list[float]:
     _init()
     return _active_model.encode([query],show_progress_bar=False)[0].tolist()
